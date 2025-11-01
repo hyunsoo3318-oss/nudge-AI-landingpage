@@ -383,11 +383,6 @@
                     </div>
 
                     <form class="signup-form" id="signupForm">
-                        <!-- <div class="form-group">
-                            <label for="name">이름</label>
-                            <input type="text" id="name" name="name" required placeholder="홍길동">
-                        </div>
-                         -->
                         <div class="form-group">
                             <label for="email">이메일 주소</label>
                             <input type="email" id="email" name="email" required placeholder="example@email.com">
@@ -440,7 +435,6 @@
             e.preventDefault();
             
             const formData = {
-                // name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
                 phone: document.getElementById('phone').value,
                 plan: document.querySelector('input[name="plan"]:checked').value,
@@ -456,12 +450,11 @@
                         'Accept': 'application/json'
                     },
                     body: JSON.stringify({
-                        // 이름: formData.name,
                         이메일: formData.email,
                         전화번호: formData.phone,
                         선택플랜: formData.plan,
                         등록시간: formData.timestamp,
-                        _subject: '넛지 AI 사전등록 - ' + formData.name,
+                        _subject: '넛지 AI 사전등록',
                         _template: 'table'
                     })
                 });
