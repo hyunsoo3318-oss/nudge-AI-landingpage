@@ -11,6 +11,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: #0a0a0a;
@@ -59,7 +63,7 @@
         }
 
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 30px;
@@ -419,6 +423,55 @@
             display: block;
         }
 
+        /* Floating Button */
+        .floating-btn {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #8a74f9 0%, #6c5ce7 100%);
+            color: #fff;
+            box-shadow: 0 -4px 20px rgba(138, 116, 249, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .floating-btn:hover {
+            background: linear-gradient(135deg, #9d84ff 0%, #7d6ce7 100%);
+            box-shadow: 0 -6px 30px rgba(138, 116, 249, 0.7);
+        }
+
+        .floating-btn-icon {
+            font-size: 1.5rem;
+        }
+
+        .floating-btn-text {
+            white-space: nowrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .floating-btn {
+                padding: 18px;
+                font-size: 1.1rem;
+            }
+
+            .floating-btn-icon {
+                font-size: 1.3rem;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .hero-title {
@@ -504,7 +557,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-section" id="cta-section">
         <div class="container">
             <div class="cta-container">
                 <h2 class="cta-title">서비스 출시 알림 받기</h2>
@@ -578,6 +631,12 @@
             </div>
         </div>
     </section>
+
+    <!-- Floating Button -->
+    <a href="#signupForm" class="floating-btn">
+        <span class="floating-btn-icon">📝</span>
+        <span class="floating-btn-text">사전등록 하러가기</span>
+    </a>
 
     <script>
         let contactConfirmed = false;
